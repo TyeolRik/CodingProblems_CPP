@@ -1,3 +1,5 @@
+// This tasks.json is for C++.
+// In *.cpp, Just Press "Ctrl + Alt + B" for Compile and Run AT ONCE.
 {
 	"version": "2.0.0",
 	"type": "shell",
@@ -53,14 +55,26 @@
 			"label": "Run C++",
 			"type": "shell",
 			"command": "",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
+			"group": "build",
 			"args": [
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],
 			"dependsOn": ["save and compile for C++"]
+		},
+		
+		// Delete File
+		{
+			"label": "Remove executable file",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn": ["Run C++"]
 		}
 	]
 }
