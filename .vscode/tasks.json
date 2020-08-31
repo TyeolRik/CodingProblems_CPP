@@ -1,0 +1,66 @@
+{
+	"version": "2.0.0",
+	"type": "shell",
+	"tasks": [
+		{
+			"label": "save and compile for C++",
+			"command": "g++",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+
+		{
+			"label": "save and compile for C",
+			"command": "gcc",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+
+		// Execute Binary File (Compiled File)
+		{
+			"label": "execute",
+			"command": "bash",
+			"group": "test",
+			"args": [
+				"${fileDirname}/${fileBasenameNoExtension}"
+			]
+		},
+
+		// Test Run Binary File (Compiled File)
+		{
+			"label": "Run C++",
+			"type": "shell",
+			"command": "",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"args": [
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"dependsOn": ["save and compile for C++"]
+		}
+	]
+}
