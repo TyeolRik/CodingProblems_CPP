@@ -15,19 +15,26 @@ if(len(sys.argv) != 3):
     print("===========================")
     sys.exit()
 
+baseURL = "https://www.acmicpc.net"
 webpage = requests.get(sys.argv[1])
 folder_name = sys.argv[2]
-# os.mkdir("./" + folder_name)
+newFolder = "./" + folder_name
+if os.path.exists(newFolder) != True:
+    os.mkdir(newFolder)
 
 soup = BeautifulSoup(webpage.content, "html.parser")
 
 problem_number = soup.find_all(attrs={'class':'list_problem_id'})
 # problem_url = soup.tr.
-print(soup.find_all(attrs={'tr':''})[0])
+problemset = soup.find(id="problemset")
+tr = problemset.findChildren("tr", recursive=True)
+list_problem_id = soup.find_all(attrs={'class':'list_problem_id'})
 
-"""
-for each in problem_number:
-    with open(each + ".cpp", "w") as f:
-        f.write("//")
-    print(each.string)
-"""
+for each in list_problem_id:
+    link = each.parent.find('a')['href']
+    newFilePath = newFolder + "/" + each.get_text() + ".cpp"
+    if os.path.exists(newFilePath):
+        continue
+    else:
+        with open(newFilePath, "w") as f:
+            f.write("// " + baseURL + link)
