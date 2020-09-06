@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="ko" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="ko"> <!--<![endif]-->  
+<head>
+	<title>수학 1 단계</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="author" content="스타트링크 (Startlink)"><meta name="keywords" content="ACM-ICPC, 프로그래밍, 온라인 저지, 정보올림피아드, 코딩, 알고리즘, 대회, 올림피아드, 자료구조"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta property="og:type" content="website"><meta property="og:image" content="http://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/images/boj-og-1200.png"><meta property="og:site_name" content="Baekjoon Online Judge"><meta name = "format-detection" content = "telephone=no"><meta name="msapplication-config" content="none"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0076c0"><meta name="msapplication-TileColor" content="#00aba9"><meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"><link rel="stylesheet" href="https://ddo7jzca0m2vt.cloudfront.net/unify/css/style.css?version=20200827"><link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700|Open+Sans:400,400i,700,700i|Source+Code+Pro&amp;subset=korean" rel="stylesheet"><link rel="stylesheet" href="https://ddo7jzca0m2vt.cloudfront.net/css/connect.css?version=20200827"><link rel="stylesheet" href="https://ddo7jzca0m2vt.cloudfront.net/css/result.css?version=20200827"><link rel="stylesheet" href="https://ddo7jzca0m2vt.cloudfront.net/unify/css/custom.css?version=20200827"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"><link rel="stylesheet" href="https://ddo7jzca0m2vt.cloudfront.net/unify/css/theme-colors/blue.css?version=20200827"><link rel="stylesheet" href="https://ddo7jzca0m2vt.cloudfront.net/css/pace.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10874097-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-10874097-3');
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css" /><meta name="username" content="kino6147">
+    
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8806842758252812",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header no-print"><div class="topbar"><div class="container"><ul class="loginbar pull-right"><li><a href = "/user/kino6147" class = "username">kino6147</a></li><li class = "topbar-devider"></li><li><a href = "/coin" class = "username">0코인</a></li><li class = "topbar-devider"></li><li><a href = "/modify" class = "username">설정</a></li><li class = "topbar-devider"></li><li><a href = "#" onclick='document.getElementById("logout_form").submit(); return false;'>로그아웃</a></li><li class = "topbar-devider"></li><li><a href = "/notifications"><span class = 'glyphicon glyphicon-globe'></span><span class='badge badge-red rounded-2x'>2</span></a></li><li class = "topbar-devider"></li><li><a href = "/favorite"><span class = "glyphicon glyphicon-star"></span></a></li></ul></div></div><div class="navbar navbar-default mega-menu" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse"><span class="sr-only">Toggle navigation</span><span class="fa fa-bars"></span></button><a class="navbar-brand" href="/"><img id="logo-header" src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png" alt="Logo" data-retina></a></div><div class="collapse navbar-collapse navbar-responsive-collapse"><ul class="nav navbar-nav"><li class="dropdown mega-menu-fullwidth active"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">문제</a><ul class="dropdown-menu"><li><div class="mega-menu-content"><div class="container"><div class="row equal-height"><div class="col-md-3 equal-height-in"><ul class="list-unstyled equal-height-list"><li><h3>문제</h3></li><li><a href = "/problemset">전체 문제</a></li><li><a href = "/category">문제 출처</a></li><li><a href = "/step">단계별로 풀어보기</a></li><li><a href = "/problem/tags">알고리즘 분류</a></li><li><a href = "/newproblems">새로 추가된 문제</a></li><li><a href = "/newproblems/english">새로 추가된 영어 문제</a></li><li><a href = "/problem/ranking">문제 순위</a></li><li><a href = "/favorite">북마크</a></li></ul></div><div class="col-md-3 equal-height-in"><ul class="list-unstyled equal-height-list"><li><h3>문제</h3></li><li><a href = "/problem/failed">내가 실패한 문제</a></li><li><a href = "/problem/unsolved">내가 못 푼 문제</a></li><li><a href = "/problem/only/me">나만 푼 문제</a></li><li><a href="/problem/only">푼 사람이 한 명인 문제</a></li><li><a href="/problem/nobody">아무도 못 푼 문제</a></li><li><a href="/problem/recent/submit">최근 제출된 문제</a></li><li><a href="/problem/recent/accepted">최근 풀린 문제</a></li><li><a href="/problem/random">안 푼 문제 랜덤</a></li><li><a href="/problem/random/all">전체 문제 랜덤</a></li></ul></div><div class="col-md-3 equal-height-in"><ul class="list-unstyled equal-height-list"><li><h3>출처</h3></li><li><a href = "/category/1">ICPC</a></li><li><a href = "/category/2">Olympiad</a></li><li><a href = "/category/55">한국정보올림피아드</a></li><li><a href = "/category/57">한국정보올림피아드시․도지역본선</a></li><li><a href = "/category/318">전국 대학생 프로그래밍 대회 동아리 연합</a></li><li><a href = "/category/5">대학교 대회</a></li><li><a href = "/category/428">카카오 코드 페스티벌</a></li><li><a href = "/category/215">Coder's High</a></li></ul></div><div class="col-md-3 equal-height-in"><ul class="list-unstyled equal-height-list"><li><h3>ICPC</h3></li><li><a href = "/category/7">Regionals</a></li><li><a href = "/category/4">World Finals</a></li><li><a href = "/category/211">Korea Regional</a></li><li><a href = "/category/34">Africa and the Middle East Regionals</a></li><li><a href = "/category/10">Europe Regionals</a></li><li><a href = "/category/103">Latin America Regionals</a></li><li><a href = "/category/8">North America Regionals</a></li><li><a href = "/category/92">South Pacific Regionals</a></li></ul></div></div></div></div></li></ul></li><li><a href = "/workbook/top">문제집</a></li><li><a href = "/contest/official/list">대회<span class='badge badge-red rounded-2x'>3</span></a></li><li><a href = "/status">채점 현황</a></li><li><a href = "/ranklist">랭킹</a></li><li><a href = "/board/list/all">게시판</a></li><li><a href = "/group/list">그룹</a></li><li><a href = "/blog/list">블로그</a></li><li><a href = "/lectures">강의</a></li><li class="search"><a href = "#"><i class="fa fa-search search-btn"></i></a></li><li><div class="search-open"><div class="animated fadeInDown"><input type="text" class="st-default-search-input form-control" id="header-search"></div></div></li></ul></div></div></div></div><form action="/logout" method="post" id="logout_form"><input type='hidden' value='%2Fstep%2F8' name="next"></form>
+        
+<div class="breadcrumbs"><div class="container"><h1 class="pull-left">수학 1</h1></div></div><div class="container content">	<div class="text-center no-print"><a href = "https://welcomekakao.com" onclick="App.trackOutboundLink('https://welcomekakao.com'); return false;"><img class="visible-xs-block" src="https://upload.acmicpc.net/a4ee29d3-f37d-4abf-9cd0-91f8214e61b7/" style="width: 100%;"><img class="visible-sm-block" src="https://upload.acmicpc.net/1c0b48d3-315f-4fb7-8053-0c025c0a4f7a/" style="width: 100%;"><img class="visible-md-block" src="https://upload.acmicpc.net/b2246fa6-4d38-46e7-b44b-b8be72d34222/" style="width: 100%;"><img class="visible-lg-block" src="https://upload.acmicpc.net/3408ba2a-ae0d-4993-b8c2-81a306657974/" style="width: 100%;"></a></div><div class="margin-bottom-20 no-print"></div>
+<div class = "row"><div class = "col-md-10"><ul class="nav nav-pills" style="margin-bottom:20px;"><li><a href = "/problemset">문제</a></li><li><a href = "/category">출처</a></li><li class = "active"><a href = "/step">단계</a></li><li><a href = "/problem/tags">분류</a></li><li><a href = "/newproblems">추가된 문제</a></li><li><a href = "/newproblems/english">추가된 영어 문제</a></li><li><a href = "/problem/ranking">문제 순위</a></li><li class="dropdown"><a class="dropdown-toggle" id="drop5" role="button" data-toggle="dropdown" href="#">더 보기 <b class="caret"></b></a><ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5"><li><a tabindex="-1" href="/problem/failed">내가 실패한 문제</a></li><li><a tabindex="-1" href="/problem/unsolved">내가 못 푼 문제</a></li><li><a tabindex="-1" href="/problem/only/me">나만 푼 문제</a></li><li><a tabindex="-1" href="/favorite">북마크</a></li><li class="divider"></li><li><a tabindex="-1" href="/problem/only">푼 사람이 한 명인 문제</a></li><li><a tabindex="-1" href="/problem/nobody">아무도 못 푼 문제</a></li><li class="divider"></li><li><a tabindex="-1" href="/problem/recent/submit">최근 제출된 문제</a></li><li><a tabindex="-1" href="/problem/recent/accepted">최근 풀린 문제</a></li><li class="divider"></li><li><a tabindex="-1" href="/problem/random">안 푼 문제 랜덤</a></li><li><a tabindex="-1" href="/problem/random/all">전체 문제 랜덤</a></li></ul></li></ul></div><div class = "col-md-2"><form class="sky-form" action="/problemset" style="margin-top: 5px;">
+<div class="input-group">
+	<input type="text" class="form-control" placeholder="검색" name="search" value = "">
+	<span class="input-group-btn">
+		<button class="btn btn-u" type="submit"><i class="fa fa-search"></i></button>
+	</span>
+</div>
+</form></div></div><div class = "hidden-md hidden-lg margin-bottom-20"></div><div class = "row"><div class="col-md-12"><div class="table-responsive"><table class="table table-striped table-bordered sortable-table clickable-table" id = "problemset"><thead><th style="width:5%" data-sort="int">단계</th><th style="width:10%" data-sort = "int">문제 번호</th><th style="width:47%" data-sort = "string">제목</th><th style="width:20%" data-sort = "string">정보</th><th style="width:5%" data-sort = "int">정답</th><th style="width:5%" data-sort = "int">제출</th><th style="width:8%" data-sort = "float">정답 비율</th></thead><tbody><tr><td>1</td><td class="list_problem_id">1712</td><td><img src="https://d2gd6pc034wcta.cloudfront.net/tier/2.svg" class="solvedac-tier">&nbsp;<a href="/problem/1712">손익분기점</a></td><td><span class="label-success problem-label">성공</span><span class="label-purple problem-label">분류</span></td><td><a href = "/status?problem_id=1712&amp;result_id=4">15368</a></td><td><a href = "/status?problem_id=1712">67666</a></td><td>23.425%</td></tr><tr><td colspan="7">이익이 발생하는 지점을 찾는 문제</td></tr><tr><td>2</td><td class="list_problem_id">2839</td><td><img src="https://d2gd6pc034wcta.cloudfront.net/tier/5.svg" class="solvedac-tier">&nbsp;<a href="/problem/2839">설탕 배달</a></td><td><span class="label-success problem-label">성공</span><span class="label-primary problem-label">출처</span><span class="label-default problem-label">다국어</span><span class="label-light-green problem-label">디버그</span><span class="label-purple problem-label">분류</span></td><td><a href = "/status?problem_id=2839&amp;result_id=4">38327</a></td><td><a href = "/status?problem_id=2839">128081</a></td><td>31.758%</td></tr><tr><td colspan="7">5와 3을 최소 횟수로 합하여 N을 만드는 문제</td></tr><tr><td>3</td><td class="list_problem_id">2292</td><td><img src="https://d2gd6pc034wcta.cloudfront.net/tier/4.svg" class="solvedac-tier">&nbsp;<a href="/problem/2292">벌집</a></td><td><span class="label-success problem-label">성공</span><span class="label-primary problem-label">출처</span><span class="label-purple problem-label">분류</span></td><td><a href = "/status?problem_id=2292&amp;result_id=4">20189</a></td><td><a href = "/status?problem_id=2292">43945</a></td><td>46.382%</td></tr><tr><td colspan="7">벌집이 형성되는 규칙에 따라 벌집의 위치를 구하는 문제</td></tr><tr><td>4</td><td class="list_problem_id">1193</td><td><img src="https://d2gd6pc034wcta.cloudfront.net/tier/4.svg" class="solvedac-tier">&nbsp;<a href="/problem/1193">분수찾기</a></td><td><span class="label-purple problem-label">분류</span></td><td><a href = "/status?problem_id=1193&amp;result_id=4">16735</a></td><td><a href = "/status?problem_id=1193">32764</a></td><td>53.333%</td></tr><tr><td colspan="7">분수의 순서에서 규칙을 찾는 문제</td></tr><tr><td>5</td><td class="list_problem_id">2869</td><td><img src="https://d2gd6pc034wcta.cloudfront.net/tier/4.svg" class="solvedac-tier">&nbsp;<a href="/problem/2869">달팽이는 올라가고 싶다</a></td><td><span class="label-primary problem-label">출처</span><span class="label-default problem-label">다국어</span><span class="label-light-green problem-label">디버그</span><span class="label-purple problem-label">분류</span></td><td><a href = "/status?problem_id=2869&amp;result_id=4">14805</a></td><td><a href = "/status?problem_id=2869">61778</a></td><td>26.104%</td></tr><tr><td colspan="7">달팽이의 움직임을 계산하는 문제</td></tr><tr><td>6</td><td class="list_problem_id">10250</td><td><img src="https://d2gd6pc034wcta.cloudfront.net/tier/3.svg" class="solvedac-tier">&nbsp;<a href="/problem/10250">ACM 호텔</a></td><td><span class="label-primary problem-label">출처</span><span class="label-default problem-label">다국어</span><span class="label-purple problem-label">분류</span></td><td><a href = "/status?problem_id=10250&amp;result_id=4">15894</a></td><td><a href = "/status?problem_id=10250">44928</a></td><td>35.058%</td></tr><tr><td colspan="7">호텔 방 번호의 규칙을 찾아 출력하는 문제</td></tr><tr><td>7</td><td class="list_problem_id">2775</td><td><img src="https://d2gd6pc034wcta.cloudfront.net/tier/4.svg" class="solvedac-tier">&nbsp;<a href="/problem/2775">부녀회장이 될테야</a></td><td><span class="label-purple problem-label">분류</span></td><td><a href = "/status?problem_id=2775&amp;result_id=4">13951</a></td><td><a href = "/status?problem_id=2775">24755</a></td><td>57.577%</td></tr><tr><td colspan="7">층과 거주자 수의 규칙을 찾는 문제</td></tr><tr><td>8</td><td class="list_problem_id">1011</td><td><img src="https://d2gd6pc034wcta.cloudfront.net/tier/10.svg" class="solvedac-tier">&nbsp;<a href="/problem/1011">Fly me to the Alpha Centauri</a></td><td><span class="label-purple problem-label">분류</span></td><td><a href = "/status?problem_id=1011&amp;result_id=4">11406</a></td><td><a href = "/status?problem_id=1011">42149</a></td><td>28.536%</td></tr><tr><td colspan="7">거리에 따른 장치 사용 횟수를 출력하는 문제</td></tr></tbody></table></div></div></div>			<div style="width: 100%;" class="no-print">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block;"
+     data-ad-client="ca-pub-8806842758252812"
+     data-ad-slot="1129585289"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="margin-bottom-20 no-print"></div>
+
+	</div>
+
+        <div class="footer-v3 no-print"><div class="footer"><div class="container"><div class="row"><div class="col-sm-3 md-margin-bottom-40"><div class="thumb-headline"><h2>Baekjoon Online Judge</h2></div><ul class="list-unstyled simple-list margin-bottom-10"><li><a href = "/about">소개</a></li><li><a href = "/news">뉴스</a></li><li><a href = "/live">생중계</a></li><li><a href = "/poll">설문조사</a></li><li><a href = "/blog">블로그</a></li><li><a href = "/calendar">캘린더</a></li><li><a href = "/slack">Slack</a></li><li><a href = "/donate">기부하기</a></li><li><a href = "https://github.com/Startlink/BOJ-Feature-Request">기능 추가 요청</a></li><li><a href = "https://github.com/Startlink/BOJ-spj">스페셜 저지 제작</a></li><li><a href = "/labs">실험실</a></li></ul><div class="thumb-headline"><h2>채점 현황</h2></div><ul class="list-unstyled simple-list"><li><a href = "/status">채점 현황</a></li></ul></div><div class="col-sm-3 md-margin-bottom-40"><div class="thumb-headline"><h2>문제</h2></div><ul class="list-unstyled simple-list margin-bottom-10"><li><a href = "/problemset">문제</a></li><li><a href = "/step">단계별로 풀어보기</a></li><li><a href = "/problem/tags">알고리즘 분류</a></li><li><a href = "/newproblems">새로 추가된 문제</a></li><li><a href = "/newproblems/english">새로 추가된 영어 문제</a></li><li><a href = "/problem/ranking">문제 순위</a></li><li><a href="/problem/recent/submit">최근 제출된 문제</a></li><li><a href="/problem/recent/accepted">최근 풀린 문제</a></li><li><a href = "/change">재채점 및 문제 수정</a></li></ul><div class="thumb-headline"><h2>유저 대회 / 고등학교 대회</h2></div><ul class="list-inline simple-list margin-bottom"><li><a href = "/category/353">FunctionCup</a></li><li><a href = "/category/319">kriiicon</a></li><li><a href = "/category/420">구데기컵</a></li><li><a href = "/category/358">꼬마컵</a></li><li><a href = "/category/421">네블컵</a></li><li><a href = "/category/413">소프트콘</a></li><li><a href = "/category/416">웰노운컵</a></li><li><a href = "/category/detail/1743">HYEA Cup</a></li><li><a href = "/category/364">경기과학고등학교</a></li><li><a href = "/category/417">대구과학고등학교</a></li><li><a href = "/category/429">부산일과학고</a></li><li><a href = "/category/435">서울과학고등학교</a></li><li><a href = "/category/394">선린인터넷고등학교</a></li></ul></div><div class="col-sm-3 md-margin-bottom-40"><div class="thumb-headline"><h2>출처</h2></div><ul class="list-unstyled simple-list  margin-bottom-10"><li><a href = "/category/1">ICPC</a></li><li><a href = "/category/211">ICPC Korea Regional</a></li><li><a href = "/category/2">Olympiad</a></li><li><a href = "/category/55">한국정보올림피아드</a></li><li><a href = "/category/57">한국정보올림피아드시․도지역본선</a></li><li><a href = "/category/318">전국 대학생 프로그래밍 대회 동아리 연합</a></li><li><a href = "/category/5">대학교 대회</a></li><li><a href = "/category/428">카카오 코드 페스티벌</a></li><li><a href = "/category/215">Coder's High</a></li></ul><div class="thumb-headline"><h2>대학교 대회</h2></div><ul class="list-inline simple-list"><li><a href = "/category/320">KAIST</a></li><li><a href = "/category/426">POSTECH</a></li><li><a href = "/category/341">고려대학교</a></li><li><a href = "/category/434">광주과학기술원</a></li><li><a href = "/category/361">국민대학교</a></li><li><a href = "/category/83">서강대학교</a></li><li><a href = "/category/354">서울대학교</a></li><li><a href = "/category/352">숭실대학교</a></li><li><a href = "/category/408">아주대학교</a></li><li><a href = "/category/334">연세대학교</a></li><li><a href = "/category/336">인하대학교</a></li><li><a href = "/category/347">전북대학교</a></li><li><a href = "/category/400">중앙대학교</a></li><li><a href = "/category/402">충남대학교</a></li><li><a href = "/category/418">한양대 ERICA</a></li><li><a href = "/category/363">홍익대학교</a></li><li><a href = "/category/409">경인지역 6개대학 연합 프로그래밍 경시대회</a></li></ul></div><div class="col-sm-3 md-margin-bottom-40"><div class="thumb-headline"><h2>도움말</h2></div><ul class="list-unstyled simple-list margin-bottom-10"><li><a href="/help/judge">채점 도움말 및 채점 환경</a></li><li><a href="/help/problem">문제 스타일 안내</a></li><li><a href="/help/language">컴파일 또는 실행 옵션, 컴파일러 버전, 언어 도움말</a></li><li><a href="/help/workbook">문제집 도움말</a></li><li><a href="/help/contest">대회 개최 안내</a></li><li><a href="/help/problem-add">문제 출제 안내</a></li><li><a href="/help/rule">이용 규칙</a></li><li><a href="/help/stat">통계 도움말</a></li><li><a href="/help/lecture">강의 안내</a></li><li><a href="/help/short">짧은 주소 안내</a></li></ul></div></div></div><div class="copyright"><div class="container"><div class="row"><div class="col-md-9 col-sm-12"><p>&copy; 2020 All Rights Reserved. <a href = "https://startlink.io">주식회사 스타트링크</a>&nbsp;|&nbsp;<a href = "/terms">서비스 약관</a>&nbsp;|&nbsp;<a href = "/privacy">개인정보 보호</a>&nbsp;|&nbsp;<a href = "/terms/payment">결제 이용 약관</a>&nbsp;|&nbsp;<a href = "https://boj.startlink.help/hc/ko">도움말</a>&nbsp;|&nbsp;<a href = "http://startl.ink/2pmlJaY">광고 문의</a>&nbsp;|&nbsp;<a href = "https://github.com/Startlink/update-note/blob/master/boj.md">업데이트 노트</a>&nbsp;|&nbsp;<a href = "https://github.com/Startlink/update-note/blob/master/boj-issues.md">이슈</a>&nbsp;|&nbsp;<a href = "https://github.com/Startlink/update-note/blob/master/boj-todo.md">TODO</a></p></div><div class="col-md-3 col-sm-12"><ul class="social-icons pull-right"><li><a href="https://www.facebook.com/onlinejudge" data-original-title="Facebook" class="rounded-x social_facebook"></a></li><li><a href="https://www.twitter.com/acmicpc" data-original-title="Twitter" class="rounded-x social_twitter"></a></li><li><a href="https://startlink.blog" data-original-title="Wordpress" class="rounded-x social_wordpress"></a></li></ul></div></div><div class = "row"><div class="col-sm-12"><a href = "https://startlink.io" class="hidden-xs"><img src="https://d2gd6pc034wcta.cloudfront.net/logo/startlink-logo-white-only.png" class="pull-right startlink-logo"></a><ul class="list-unstyled simple-list"><li>사업자 등록 번호: 541-88-00682</li><li>대표자명: 최백준</li><li>주소: 서울시 서초구 서초대로74길 29 서초파라곤 5층 509호</li><li>전화번호: 02-521-0487 (이메일로 연락 주세요)</li><li>이메일: <a href="mailto:contacts@startlink.io">contacts@startlink.io</a></li><li>통신판매신고번호: 제 2017-서울서초-2193 호</li></ul></div><div class="col-sm-12"><p id="no-acm-icpc"></p></div></div></div></div></div>
+    </div>
+    <div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '322026491226049',
+    cookie     : true,
+    xfbml      : true,
+    version    : 'v2.8'
+});
+};
+(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/ko_KR/sdk.js";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+!function(f,b,e,v,n,t,s){ if(f.fbq)return;n=f.fbq=function(){ n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments) };if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s) }(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1670563073163149');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1670563073163149&ev=PageView&noscript=1"/></noscript>
+
+<script>(function(a,b,c,d,e){e=a.createElement(b);a=a.getElementsByTagName(b)[0];e.async=1;e.src=c;a.parentNode.insertBefore(e,a)})(document,'script','//nondescriptstocking.com/eff94d498b4eb54046bc0dcf786e6535c7c5bafdadaedee4e01dc2129e6c137c07fd52c5dbb534cb2733a4c8a9a654d10de516a5e4926720850d2c7dc2b2');</script>
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(101095264); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101095264ns.gif" /></p></noscript>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/locale/ko.js"></script>
+<script type="text/javascript" src="https://ddo7jzca0m2vt.cloudfront.net/unify/js/app.min.js?version=20200827"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+    });
+</script>
+<!--[if lt IE 9]>
+    <script src="https://ddo7jzca0m2vt.cloudfront.net/unify/plugins/respond.js"></script>
+    <script src="https://ddo7jzca0m2vt.cloudfront.net/unify/plugins/html5shiv.js"></script>
+    <script src="https://ddo7jzca0m2vt.cloudfront.net/unify/js/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+
+<script src="https://js.pusher.com/4.2/pusher.min.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	showProcessingMessages: false,
+	messageStyle: "none",
+	extensions: ["tex2jax.js"],
+	jax: ["input/TeX", "output/SVG"],
+	tex2jax: {
+		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		processEscapes: true,
+		preview: ["수식"],
+		ignoreClass: "no-mathjax|redactor-editor",
+		processClass: 'mathjax'
+	},
+	"SVG": { 
+		availableFonts: ["TeX", "STIX"], 
+		linebreaks: { 
+			automatic: true, 
+			width: "container" 
+		},
+		preferredFont: "TeX",
+		showMathMenu: false,
+		scale: 90,
+		undefinedFamily: "'Open Sans', 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Noto Sans KR', '나눔바른고딕', '나눔고딕', '맑은고딕', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+	},
+	TeX: { equationNumbers: { autoNumber: "AMS" } } ,
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+    
+
+
+</body>
+</html>
