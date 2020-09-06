@@ -1,6 +1,16 @@
 #-*- coding:utf-8 -*-
+# Python 3.8
+# need Libraries: beautifulsoup4, requests
 
-# This python file is for getting problem number and making .cpp files automatically in one page
+"""
+This python file is for getting problem number and making .cpp files automatically in one page
+This Programs Returns
+─ FolderName
+├─ 1234.cpp
+├─ 2345.cpp
+├─ 75441.cpp
+├─ ...
+"""
 
 import sys
 import requests
