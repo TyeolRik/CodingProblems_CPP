@@ -6,6 +6,6 @@ RUN mkdir "/root/CodingProblems_CPP"
 
 RUN apt update &&\
     apt upgrade -y &&\
-    apt install python3-pip
+    apt install python3-pip -y
 
 # RUN apt install git && git clone "https://github.com/TyeolRik/CodingProblems_CPP.git"
