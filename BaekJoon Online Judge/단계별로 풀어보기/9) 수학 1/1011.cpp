@@ -22,6 +22,16 @@ Pattern
     16: 7       1 2 3 4 3 2 1
 */
 
+long long test2(long long length) {
+    int temp = floor(sqrt(length - 1));
+    // std::cout << "Input: " << length << "\t\t" << temp * temp << " AND " << temp*temp + temp << " AND " << (temp + 1) * (temp + 1) << "\n";
+    if(temp * temp < length && length <= temp*temp + temp) {
+        return 2 * temp;
+    } else {
+        return 2 * temp + 1;
+    }
+}
+
 long long test(long long length) {
     double odd_min = sqrt(4 * length) - 1;
     /*
