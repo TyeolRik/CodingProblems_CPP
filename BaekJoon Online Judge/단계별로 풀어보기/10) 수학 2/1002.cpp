@@ -2,82 +2,62 @@
 #include <iostream>
 #include <cmath>
 
-/*
-Case 1. 동심원 (원의 중심이 같을 때)
-     1-1. 반지름이 서로 다르면 절대 안 만남
-     1-2. 반지름이 같으면 무한히 많은 경우의 수
+// 매우 작은 수
+// Double 형 끼리의 수 비교를 위함. (https://stackoverflow.com/a/17341/7105963)
+#define EPSILON     1e-10
 
-Case 2. 반지름이 작은 원이 
-*/
-
-class Circle {
-public:
-    double x;
-    double y;
-    double radius;
-
-    Circle(double _x, double _y, double _r) {
-        x = _x;
-        y = _y;
-        radius = _r;
-    }
-};
-
-double distance(Circle c1, Circle c2) {
-    return sqrt((c2.x - c1.x) * (c2.x - c1.x) + (c2.y - c1.y) * (c2.y - c1.y));
+bool areSame(double _a, double _b) {
+    return std::abs(_a - _b) < EPSILON;
 }
 
-double smaller(double input1, double input2) {
-    if(input1 > input2) {
-        return input2;
-    } else if(input1 < input2) {
-        return input1;
-    } else {
-        std::cout << "!!!ERROR!!!\n";
-        exit(-1);
-        return -1;
-    }
-}
-
-double bigger(double input1, double input2) {
-    if(input1 > input2) {
-        return input1;
-    } else if(input1 < input2) {
-        return input2;
-    } else {
-        std::cout << "!!!ERROR!!!\n";
-        exit(-1);
-        return -1;
-    }
+double getDistance(double x1, double y1, double x2, double y2) {
+    return std::sqrt(std::pow((x2 - x1), 2) + std::pow((y2 - y1), 2));
 }
 
 int main() {
+    std::cin.tie(NULL);
+    std::cin.sync_with_stdio(false);
     int T;
     std::cin >> T;
     
     while(T --> 0) {
         double x1, y1, r1, x2, y2, r2;
         std::cin >> x1 >> y1 >> r1 >> x2 >> y2 >> r2;
-
-        Circle *circle_big, *circle_small;
-
+        
+        double distance = getDistance(x1, y1, x2, y2);
+        double big_radius, small_radius;
         if(r1 > r2) {
-            circle_big   = &Circle(x1, y1, r1);
-            circle_small = &Circle(x2, y2, r2);
-        } else if(r1 == r2) {
-            
-        } else {    // r1 < r2
-            circle_small = &Circle(x1, y1, r1);
-            circle_big   = &Circle(x2, y2, r2);
+            big_radius = r1;
+            small_radius = r2;
+        } else {
+            big_radius = r2;
+            small_radius = r1;
         }
 
-        double distance = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));  // 점과 점 사이의 거리
-
-        double small_r = smaller(r1, r2);   // 반지름 작은 것 구하기
-        double big_r = bigger(r1, r2);      // 반지름 큰 것 구하기
-        int ret;                            // 나중에 RETURN 할 숫자 저장
+        if(areSame(distance, 0.0) && areSame(r1, r2)) {
+            // 두 원이 일치할 때, 답은 -1
+            std::cout << "-1\n";
+            continue;
+        } else if(areSame(distance, (r1 + r2))) {
+            // 두 원이 외접할 때, 답은 1
+            std::cout << "1\n";
+            continue;
+        } else if(areSame(distance + small_radius, big_radius)) {
+            // 두 원이 내접할 때, 답은 1
+            std::cout << "1\n";
+            continue;
+        } else if(distance > r1 + r2) {
+            // 두 원이 서로 떨어져 있고 만나지 않을 때, 답은 0
+            std::cout << "0\n";
+            continue;
+        } else if(distance + small_radius < big_radius) {
+            // 한 원이 다른 원의 내부에 있고 두 원이 만나지 않을 때, 답은 0.
+            // 꼭 두 원의 중심이 같을 필요는 없습니다!
+            std::cout << "0\n";
+            continue;
+        } else {
+            std::cout << "2\n";
+            continue;
+        }
     }
-    
-    
-
 }
