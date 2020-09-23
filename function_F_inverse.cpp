@@ -114,4 +114,10 @@ int main() {
     for(int i = 0; i < 3; i++) {
         std::cout << correct_answer[i][0] << "\t|\t" << inverse_calculated[i] << "\n";
     }
+
+    print_bitset(bin[10]);
+    print_bitset(bin[11]);
+    print_bitset(bin[12]);
+    print_bitset(bin[100]);
+    print_bitset(bin[200]);
 }
