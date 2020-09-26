@@ -3,21 +3,6 @@
 #include <vector>
 #include <algorithm>
 
-void comb(int N, int K)
-{
-    std::string bitmask(K, 1); // K leading 1's
-    bitmask.resize(N, 0); // N-K trailing 0's
-
-    // print integers and permute bitmask
-    do {
-        for (int i = 0; i < N; ++i) // [0..N-1] integers
-        {
-            if (bitmask[i]) std::cout << i + 1 << " ";
-        }
-        std::cout << std::endl;
-    } while (std::prev_permutation(bitmask.begin(), bitmask.end()));
-}
-
 int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
@@ -25,5 +10,27 @@ int main() {
     int N, M;
     std::cin >> N >> M;
 
-    comb(N, M);
+    std::vector<std::vector<int>> permutation_list;
+    std::vector<int> temp;
+    temp.reserve(N);
+    for(int i = 0; i < N; i++) {
+        temp.push_back(i + 1);
+    }
+    do {
+        std::vector<int> feed;
+        feed.reserve(M);
+        for(int i = 0; i < M; i++) {
+            feed.push_back(temp.at(i));
+        }
+        permutation_list.push_back(feed);
+    } while(std::next_permutation(temp.begin(), temp.end()));
+
+    permutation_list.erase(std::unique(permutation_list.begin(), permutation_list.end()), permutation_list.end());
+
+    for(int i = 0; i < permutation_list.size(); i++) {
+        for(int j = 0; j < permutation_list.at(i).size(); j++) {
+            std::cout << permutation_list.at(i).at(j) << " ";
+        }
+        std::cout << "\n";
+    }
 }
