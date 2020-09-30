@@ -468,6 +468,12 @@ class DES {
     }
 
     std::bitset<64> Encryption() {
+        std::cout << "=== DES Encryption ===\n";
+        std::cout << "Plaintext(64bits) : ";
+        print_bitset_pretty(_plaintext);
+        std::cout << "      Key(56bits) : ";
+        print_bitset_pretty(_key);
+        
         std::bitset<64> crypto_message;
         crypto_message = InitialPermutation(_plaintext);
 
@@ -491,6 +497,8 @@ class DES {
         }
         crypto_message = Inverse_of_InitialPermutation(crypto_message);
         _encrypted_message = crypto_message;
+        std::cout << "Encrypted(64bits) : ";
+        print_bitset_pretty(_encrypted_message);
         return crypto_message;
     }
 
@@ -508,12 +516,14 @@ class DES {
                 ret = ret + " ";
             }
         }
+        std::cout << "   To Hexadecimal :  " << ret << "\n";
         return ret;
     }
 };
 
 int main() {
     DES test = DES("123456ABCD132536", "AABB09182736CCDD");
-    test.Encryption();
-    std::cout << test.to_hexadecimal_string() << "\n";
+    std::bitset<64> encrypted_binary    = test.Encryption();
+    std::string encrypted_hex           = test.to_hexadecimal_string();
+    std::cout << "======================\n";
 }
