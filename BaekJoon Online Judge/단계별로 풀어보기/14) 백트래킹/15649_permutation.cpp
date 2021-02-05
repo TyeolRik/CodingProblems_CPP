@@ -3,12 +3,16 @@
 #include <vector>
 #include <algorithm>
 
+#include <chrono>
+
 int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
     std::cout.tie(NULL);
     int N, M;
     std::cin >> N >> M;
+
+    auto start = std::chrono::high_resolution_clock::now();
 
     std::vector<std::vector<int>> permutation_list;
     std::vector<int> temp;
@@ -29,8 +33,12 @@ int main() {
 
     for(int i = 0; i < permutation_list.size(); i++) {
         for(int j = 0; j < permutation_list.at(i).size(); j++) {
-            std::cout << permutation_list.at(i).at(j) << " ";
+            // std::cout << permutation_list.at(i).at(j) << " ";
         }
-        std::cout << "\n";
+        // std::cout << "\n";
     }
+    
+    auto elapsed = std::chrono::high_resolution_clock::now() - start;
+    long long microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
+    std::cout << "Time cost : " << microseconds / 1000.0 << "ms\n";
 }
