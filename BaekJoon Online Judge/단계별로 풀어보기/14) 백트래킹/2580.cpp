@@ -38,9 +38,11 @@ void printSudoku() {
 */
 
 std::vector<int> getPossibleSolution(Block currentBlock) {
-    std::vector<int> ret(9);
-    std::iota(ret.begin(), ret.end(), 1);
+    std::vector<int> ret;
+    std::vector<bool> available(9, true);
+    ret.reserve(9);
 
+/*
     // 가로 체크
     for(int each : sudoku[currentBlock.row]) {
         if(each != 0) {
@@ -48,7 +50,7 @@ std::vector<int> getPossibleSolution(Block currentBlock) {
         }
     }
 
-    if(ret.size() == 1) {
+    if(ret.size() == 0) {
         return ret;
     }
 
@@ -58,19 +60,52 @@ std::vector<int> getPossibleSolution(Block currentBlock) {
             ret.erase(std::remove(ret.begin(), ret.end(), sudoku[i][currentBlock.col]), ret.end());
         }
     }
-
-    if(ret.size() == 1) {
+    
+    if(ret.size() == 0) {
         return ret;
     }
     
     // 네모 체크
-    int startRow = currentBlock.row - (currentBlock.row % 3);
-    int startCol = currentBlock.col - (currentBlock.col % 3);
+    // int startRow = currentBlock.row - (currentBlock.row % 3);
+    int startRow = currentBlock.row / 3 * 3;
+    // int startCol = currentBlock.col - (currentBlock.col % 3);
+    int startCol = currentBlock.col / 3 * 3;
     for(int i = startRow; i < startRow + 3; i++) {
         for(int j = startCol; j < startCol + 3; j++) {
             if(sudoku[i][j] != 0) {
                 ret.erase(std::remove(ret.begin(), ret.end(), sudoku[i][j]), ret.end());
             }
+        }
+    }
+*/
+    // 가로체크
+    for(int each : sudoku[currentBlock.row]) {
+        if(each != 0) {
+            available[each - 1] = false;
+        }
+    }
+
+    // 세로체크
+    for(int i = 0; i < 9; i++) {
+        if(sudoku[i][currentBlock.col] != 0) {
+            available[sudoku[i][currentBlock.col] - 1] = false;
+        }
+    }
+
+    // 네모체크
+    int startRow = currentBlock.row / 3 * 3;
+    int startCol = currentBlock.col / 3 * 3;
+    for(int i = startRow; i < startRow + 3; i++) {
+        for(int j = startCol; j < startCol + 3; j++) {
+            if(sudoku[i][j] != 0) {
+                available[sudoku[i][j] - 1] = false;
+            }
+        }
+    }
+
+    for(int i = 0; i < 9; i++) {
+        if(available[i]) {
+            ret.push_back(i + 1);
         }
     }
 
@@ -79,34 +114,25 @@ std::vector<int> getPossibleSolution(Block currentBlock) {
 
 void DFS() {
 
-    if(done) {
+    // 탈출조건명시
+    if(blankList.empty()) {
+        done = true;
+        printSudoku();
+        exit(0);
         return;
-    } else {
-        // 탈출조건명시
-        if(blankList.empty()) {
-            for(Block solution : stack) {
-                // sudoku[solution.row][solution.col] = solution.content;
-            }
-            printSudoku();
-            done = true;
-            return;
-        }
-        Block nextBlock = blankList.back();
-        blankList.pop_back();
-
-        for(int possible : getPossibleSolution(nextBlock)) {
-            sudoku[nextBlock.row][nextBlock.col] = possible;
-            stack.push_back({nextBlock.row, nextBlock.col, possible});
-            DFS();
-            sudoku[nextBlock.row][nextBlock.col] = 0;
-            stack.pop_back();
-        }
-
-
-        blankList.push_back(nextBlock);
     }
+    Block nextBlock = blankList.back();
+    blankList.pop_back();
 
-    
+    for(int possible : getPossibleSolution(nextBlock)) {
+        sudoku[nextBlock.row][nextBlock.col] = possible;
+        stack.push_back({nextBlock.row, nextBlock.col, possible});
+        DFS();
+        sudoku[nextBlock.row][nextBlock.col] = 0;
+        stack.pop_back();
+    }
+    blankList.push_back(nextBlock);
+
 }
 
 
@@ -115,6 +141,7 @@ int main() {
     std::cin.sync_with_stdio(false);
     blankList.reserve(80);
     sudoku.reserve(9);
+    stack.reserve(80);
     for(int i = 0; i < 9; i++) {
         std::vector<int> col(9);
         for(int j = 0; j < 9; j++) {
