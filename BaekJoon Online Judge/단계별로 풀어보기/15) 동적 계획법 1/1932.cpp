@@ -4,39 +4,26 @@
 #include <algorithm>
 
 int main() {
-    std::cin.tie(NULL);
-    std::cin.sync_with_stdio(false);
+    int N;
+    std::cin >> N;
+    std::vector<int> lastLine = std::vector<int>(N);
+    std::vector<int> currentLine = std::vector<int>(N);
 
-    int size;
-    std::cin >> size;
-
-    std::vector<std::vector<unsigned long long>> triangle;
-    std::vector<std::vector<unsigned long long>> dp;
-    triangle.reserve(size);
-    dp.reserve(size);
-    for(int i = 0; i < size; i++) {
-        std::vector<unsigned long long> eachRow(i + 1);
-        std::vector<unsigned long long> eachdp(i + 1);
-        for(int j = 0; j < i + 1; j++) {
-            std::cin >> eachRow[j];
+    for(int height = 1; height <= N; height++) {
+        for(int i = 0; i < height; i++) {
+            std::cin >> currentLine[i];
         }
-        triangle.push_back(eachRow);
-        dp.push_back(eachdp);
+        currentLine[0] = currentLine[0] + lastLine[0];
+        for(int i = 1; i < height - 1; i++) {
+            if(lastLine[i-1] > lastLine[i]) {
+                currentLine[i] = currentLine[i] + lastLine[i-1];
+            } else {
+                currentLine[i] = currentLine[i] + lastLine[i];
+            }
+        }
+        currentLine[height - 1] = currentLine[height - 1] + lastLine[height-2];
+        std::copy(currentLine.begin(), currentLine.begin()+height, lastLine.begin());
     }
 
-    dp[0][0] = triangle[0][0];
-    dp[1][0] = triangle[0][0] + triangle[1][0];
-    dp[1][1] = triangle[0][0] + triangle[1][1];
-
-    for(int i = 2; i < size; i++) {
-        dp[i][0] = dp[i-1][0] + triangle[i][0];
-
-        for(int j = 1; j < i; j++) {
-            dp[i][j] = std::max(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j];
-        }
-        
-        dp[i][i] = dp[i-1][i-1] + triangle[i][i];
-    }
-
-    std::cout << *std::max_element(dp[size-1].begin(), dp[size-1].end());
+    std::cout << *std::max_element(lastLine.begin(), lastLine.end());
 }
