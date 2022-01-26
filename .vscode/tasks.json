@@ -19,7 +19,10 @@
 			"problemMatcher": [
 				"$gcc"
 			],
-			"group": "build"
+			"group": "build",
+			"presentation": {
+				"clear": true
+			}
 		},
 
 		{
@@ -59,7 +62,10 @@
 			"args": [
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],
-			"dependsOn": ["save and compile for C++"]
+			"dependsOn": ["save and compile for C++"],
+			"presentation": {
+				"clear": true
+			}
 		},
 		
 		// Delete File
@@ -74,7 +80,13 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"dependsOn": ["Run C++"]
+			"dependsOn": ["Run C++"],
+			"presentation": {
+				"showReuseMessage": false
+			}
 		}
-	]
+	],
+	"presentation": {
+		"showReuseMessage": false
+	}
 }
