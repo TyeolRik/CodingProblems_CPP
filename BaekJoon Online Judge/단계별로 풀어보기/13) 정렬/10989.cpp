@@ -1,24 +1,25 @@
 // https://www.acmicpc.net/problem/10989
-// Reference: https://bowbowbow.tistory.com/8
-// 카운팅 정렬하기 (Counting Sort)
 #include <iostream>
+#include <vector>
+#include <algorithm>
+
+int counter[10001] = {0,};
 
 int main() {
-    std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
-    std::cout.tie(NULL);
-
-    int N;      // 수의 개수
-    int temp;
+    std::cin.sync_with_stdio(false);
+    int N;
     std::cin >> N;
-    short* counter = new short[10000]();        // 10000 보다 작거나 같은 자연수이다.
+    int eachInput;
     for(int i = 0; i < N; i++) {
-        std::cin >> temp;
-        counter[temp-1]++;
+        std::cin >> eachInput;
+        counter[eachInput]++;
     }
-    for(int i = 0; i < 10000; i++) {
-        for(int j = 0; j < counter[i]; j++) {
-            std::cout << i+1 << '\n';
+    for(int i = 1; i < 10001; i++) {
+        if(counter[i] > 0) {
+            for(int j = 0; j < counter[i]; j++) {
+                std::cout << i << "\n";
+            }
         }
     }
 }
